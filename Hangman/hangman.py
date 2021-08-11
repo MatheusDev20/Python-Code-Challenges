@@ -12,12 +12,10 @@ s_word = input("Type anything to get started: ")
 def generateSelectedWord(list_of_words):
   selected = None
   r = random.randint(0, len(list_of_words) -1)
-  print(r)
   for i in range(len(list_of_words)):
     if i == r:
       selected = list_of_words[i]
   
-  print(selected)
   return selected
 
 # "JINX" "->" ["J", "I", "N"] "->" "J I N __"
@@ -25,7 +23,6 @@ def showPreviewWord(word, rightChars):
   previewWord = ''
   for character in word:
     if character in rightChars:
-      print(character)
       previewWord = previewWord + character
       
     else: 
@@ -43,7 +40,6 @@ def selectRole(n):
     '5': possible_top_words
   }
   for k in roles:
-    print(k)
     if k == n: words = roles[k]
   return words
 
@@ -63,16 +59,14 @@ def start():
   i = 1
   while(i < number_attempts):
     entered_letter = input('Enter a letter: ')
-    print(entered_letter)
-    print(selectedWord)
     if entered_letter in selectedWord:
       print("Correct!")
       rightChars.append(entered_letter)
       preview_word = showPreviewWord(selectedWord, rightChars)
-
+      print(preview_word)
       if preview_word == selectedWord:
         print("Congratulations you won the game")
-
+        return 
       print("Preview Word: " + preview_word)
       print(f"Tentativas restantes {number_attempts - i} ")
 
