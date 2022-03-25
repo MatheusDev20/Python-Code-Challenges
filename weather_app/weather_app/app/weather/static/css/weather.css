@@ -1,0 +1,31 @@
+h1 {
+  color: blue;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw; 
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 40px;
+}
+.form-container {
+  height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.form-container > form > input {
+  margin-top: 20px;
+}
+.blue-temp {
+  color: blue;
+}
+.error {
+  color: red
+}
